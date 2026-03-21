@@ -1,0 +1,16 @@
+services:
+  telegraf:
+    image: telegraf:latest
+    container_name: telegraf
+    restart: unless-stopped
+    volumes:
+      - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /:/hostfs:ro
+    environment:
+      - HOST_PROC=/hostfs/proc
+      - HOST_SYS=/hostfs/sys
+      - HOST_ETC=/hostfs/etc
+      - HOST_MOUNT_PREFIX=/hostfs
+    ports:
+      - "9273:9273"
