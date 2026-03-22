@@ -18,6 +18,7 @@ This repository contains a Docker Compose configuration for running Telegraf, co
 ```bash
   git clone https://github.com/ezitisitis/telegraf-docker.git
   cd telegraf-docker
+  cp telegraf.conf.example telegraf.conf
   echo "DOCKER_GID=$(getent group docker | cut -d: -f3)" > .env
   docker compose up -d
   echo "Add this as your prometheus target: $(hostname -I | awk '{print $1}'):9273"
