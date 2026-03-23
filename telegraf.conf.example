@@ -25,7 +25,6 @@
 
 [[inputs.disk]]
   ignore_fs = ["tmpfs", "devtmpfs", "devfs", "iso9660", "overlay", "aufs", "squashfs"]
-  mount_points = ["/hostfs"]
 
 [[inputs.diskio]]
   devices = ["*"]
