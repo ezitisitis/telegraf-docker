@@ -26,9 +26,6 @@
 [[inputs.disk]]
   ignore_fs = ["tmpfs", "devtmpfs", "devfs", "iso9660", "overlay", "aufs", "squashfs"]
   mount_points = ["/hostfs"]
-  # Collect disk usage percentage and other disk metrics
-  # * includes most fields; used_percent, free, and inodes_free are often requested separately
-  fieldpass = ["*", "used_percent", "free", "inodes_free"]
 
 [[inputs.diskio]]
   devices = ["*"]
